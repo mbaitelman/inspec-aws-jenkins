@@ -1,7 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'chef/inspec:latest'
+		image 'chef/inspec:latest'
+		args '--entrypoint=""'
         }
     }
 
