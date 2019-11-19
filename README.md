@@ -8,7 +8,7 @@ To use this code there are a few prequesites.
 
 * A Jenkins instance
 * Jenkins needs to be able to create/run docker containers. [See plugin docs](https://plugins.jenkins.io/docker-plugin)
-* Add an AWS credintials set to Jenkins [See Cloudbees wiki](https://support.cloudbees.com/hc/en-us/articles/360027893492-How-To-Authenticate-to-AWS-with-the-Pipeline-AWS-Plugin)
+* Add an AWS credintials set to Jenkins with an id of `aws-credentials` [See Cloudbees wiki](https://support.cloudbees.com/hc/en-us/articles/360027893492-How-To-Authenticate-to-AWS-with-the-Pipeline-AWS-Plugin)
 * Other plugins used:
   * The run uses [Junit](https://plugins.jenkins.io/junit) to report
   * [AnsiColor](https://plugins.jenkins.io/ansicolor) to show colors
