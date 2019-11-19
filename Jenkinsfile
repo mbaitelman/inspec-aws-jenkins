@@ -5,9 +5,9 @@ pipeline {
         }
     }
 
-    // triggers {
-    //     pollSCM 'H/5 * * * *'
-    // }
+	environment {
+		CHEF_LICENSE = 'accept'
+	}
 
     parameters {
         choice choices: ['us-west-2', 'us-east-2'], description: '', name: 'region'
