@@ -25,15 +25,10 @@ pipeline {
 		stage('Run tests'){
 			steps {
 				withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-					sh label: 'Inspec tests', script: """inspec exec aws-security -t aws://${params.region} --reporter cli junit:/junit.xml""" 
+					sh label: 'Inspec tests', script: """inspec exec aws-security -t aws://${params.region} --reporter cli junit:junit.xml""" 
 				}
 			}
 		}
-		// stage('Save test results') {
-		//		 steps {
-		//				 junit 'junit.xml' 
-		//		 }			 
-		// }
 	}
 	post {
 		always {
