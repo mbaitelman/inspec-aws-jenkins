@@ -8,8 +8,10 @@ control 'aws-multi-region-security-group-ftp-1.0' do
   aws_regions.region_names.each do |region|
     aws_security_groups(aws_region: region).group_ids.each do |security_group_id|
       describe aws_security_group(aws_region: region, group_id: security_group_id) do
-        it { should exist }
+        #it { should exist }
         it { should_not allow_in(ipv4_range: '0.0.0.0/0', port: 21) }
+        it { should_not allow_in(protocol: 'all') }
+        it { should_not allow_in(ipv4_range: '0.0.0.0/0') }
       end
     end
   end
