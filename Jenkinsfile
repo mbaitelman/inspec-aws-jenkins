@@ -1,13 +1,13 @@
 pipeline {
 	agent {
 		docker {
-			image 'chef/inspec:latest'
+			image 'cincproject/auditor'
 			args '--entrypoint=""'
 		}
 	}
 
 	environment {
-		CHEF_LICENSE = 'accept'
+	//	CHEF_LICENSE = 'accept'
 	}
 
 	parameters {
