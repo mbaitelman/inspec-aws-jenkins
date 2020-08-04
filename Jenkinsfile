@@ -3,6 +3,7 @@ pipeline {
 		docker {
 			image 'chef/inspec:latest'
 			args '--entrypoint=""'
+			label 'remotedocker'
 		}
 	}
 
